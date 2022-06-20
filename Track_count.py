@@ -81,7 +81,7 @@ def draw_lines(lines, img):
 def update_counter(centerpoints, obj_name):
     for line in lines:
         p1 = Point(*centerpoints[-2])
-        q1 = Point(*centerpoints[-3])
+        q1 = Point(*centerpoints[-2])
         p2 = Point(*line['Cords'][0])
         q2 = Point(*line['Cords'][1])
         if doIntersect(p1, q1, p2, q2):
