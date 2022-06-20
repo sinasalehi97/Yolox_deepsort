@@ -80,7 +80,7 @@ def draw_lines(lines, img):
 # Update the Counter
 def update_counter(centerpoints, obj_name):
     for line in lines:
-        p1 = Point(*centerpoints[-1])
+        p1 = Point(*centerpoints[0])
         q1 = Point(*centerpoints[-1])
         p2 = Point(*line['Cords'][0])
         q2 = Point(*line['Cords'][1])
