@@ -209,8 +209,15 @@ if __name__=='__main__':
     ) # open one video
     frame_count = 0
     fps = 0.0
+
+(H, W) = (None, None)	
+	
     while True:
         ret_val, frame = cap.read() # read frame from video
+	
+	if W is None or H is None:
+		(H, W) = frame.shape[:2]
+		
         t1 = time_synchronized()
 	for i in range(0, detections.shape[2]):
 	
