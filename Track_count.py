@@ -212,8 +212,21 @@ if __name__=='__main__':
     while True:
         ret_val, frame = cap.read() # read frame from video
         t1 = time_synchronized()
+	for i in range(0, detections.shape[2]):
+	
+		# filter out weak detections by ensuring the predicted
+		# probability is greater than a minimum threshold
+		if detections[0, 0, i, 2] > args["confidence"]:
+			# compute the (x, y)-coordinates of the bounding box for
+			# the object, then update the bounding box rectangles list
+			box = detections[0, 0, i, 3:7] * np.array([W, H, W, H])
+			rects.append(box.astype("int"))
 
-  
+			# draw a bounding box surrounding the object so we can
+			# visualize it
+			(startX, startY, endX, endY) = box.astype("int")
+			cv2.rectangle(frame, (startX, startY), (endX, endY),
+				(0, 255, 0), 2)
 
         objects = ct.update(rects)
 
