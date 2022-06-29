@@ -80,8 +80,8 @@ def draw_lines(lines, img):
 # Update the Counter
 def update_counter(centerpoints, obj_name):
     for line in lines:
-        p1 = Point(centerpoints)
-        q1 = Point(centerpoints)
+        p1 = Point(*centerpoints[0])
+        q1 = Point(*centerpoints[1])
         p2 = Point(*line['Cords'][0])
         q2 = Point(*line['Cords'][1])
         if doIntersect(p1, q1, p2, q2):
@@ -131,7 +131,7 @@ def draw_boxes(img, bbox, object_id, identities=None, offset=(0, 0)):
         UI_box(box, img, label=label + str(id), color=color, line_thickness=3, boundingbox=True)
 
         if len(data_deque[id]) >=2:
-            update_counter(centerpoints = center, obj_name = obj_name)
+            update_counter(centerpoints = data_deque[id], obj_name = obj_name)
 
     return img
 
