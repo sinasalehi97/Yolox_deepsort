@@ -80,7 +80,7 @@ def draw_lines(lines, img):
 # Update the Counter
 def update_counter(centerpoints, obj_name):
     for line in lines:
-        p1 = Point(*centerpoints[-2])
+        p1 = Point(*centerpoints[])
         q1 = Point(*centerpoints[-2])
         p2 = Point(*line['Cords'][0])
         q2 = Point(*line['Cords'][1])
@@ -117,7 +117,7 @@ def draw_boxes(img, bbox, object_id, identities=None, offset=(0, 0)):
     for i, box in enumerate(bbox):
         x1, y1, x2, y2 = [int(i) +offset[0]  for i in box]  
         box_height = (y2-y1)
-        center = (int((x2+x1)/ 2), int((y2+y2)/2))
+        center = (int((x2+x1)/ 2), int((y1+y2)/2))
         id = int(identities[i]) if identities is not None else 0
 
         if id not in set(data_deque):  
