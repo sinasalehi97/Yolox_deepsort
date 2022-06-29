@@ -35,7 +35,7 @@ def UI_box(x, img, color=None,label=None,line_thickness=None, boundingbox = True
     c3 = (int((int(x[0])+ int(x[2]))/2), int((int(x[1])+ int(x[3]))/2))
     if boundingbox:
         cv2.rectangle(img, c1, c2, color, 2)
-        cv2.circle(img, c3, 10, color, 2 )
+        cv2.circle(img, c3, 4, color, -1 )
     if label:
         tf = max(tl - 1, 1)  # font thickness
         t_size = cv2.getTextSize(label, 0, fontScale=tl / 3, thickness=tf)[0]
