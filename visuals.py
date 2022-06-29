@@ -32,7 +32,7 @@ def UI_box(x, img, color=None,label=None,line_thickness=None, boundingbox = True
     tl = line_thickness or round(0.002 * (img.shape[0] + img.shape[1]) / 2) + 1  # line/font thickness
     color = color or [random.randint(0, 255) for _ in range(3)]
     c1, c2 = (int(x[0]), int(x[1])), (int(x[2]), int(x[3]))
-    c3 = ((int(x[0])+ int(x[2]))/2, (int(x[1])+ int(x[3]))/2)
+    c3 = (int((int(x[0])+ int(x[2]))/2), int((int(x[1])+ int(x[3]))/2))
     if boundingbox:
         cv2.rectangle(img, c1, c2, color, 2)
         cv2.circle(img, c3, 10, color, 2 )
