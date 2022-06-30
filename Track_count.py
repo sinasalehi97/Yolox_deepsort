@@ -8,6 +8,7 @@ from yolox.exp import get_exp
 import numpy as np
 from collections import deque
 from collections import Counter
+import matplotlib.pyplot as plt
 
 # importing Detector
 from yolox.data.datasets.coco_classes import COCO_CLASSES
