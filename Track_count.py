@@ -226,5 +226,7 @@ if __name__=='__main__':
     vid_writer.release()
     cv2.destroyAllWindows()
 
-print(data_deque[id])
+for key, value in sdata_deque.items(): 
+    print(key, ' : ', value)
+
     
