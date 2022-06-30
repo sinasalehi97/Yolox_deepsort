@@ -203,7 +203,7 @@ if __name__=='__main__':
             frame = draw_lines(lines, img = frame)
             frame = draw_results(img= frame)
             plt.imshow(img=frame)
-            plt.show()          
+                      
             vid_writer.write(frame)
             ch = cv2.waitKey(1)
             if ch == 27 or ch == ord("q") or ch == ord("Q"):
