@@ -225,4 +225,6 @@ if __name__=='__main__':
     cap.release()
     vid_writer.release()
     cv2.destroyAllWindows()
-    print(data_deque[id])
+
+print(data_deque[id])
+    
