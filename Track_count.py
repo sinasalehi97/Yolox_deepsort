@@ -203,6 +203,7 @@ if __name__=='__main__':
             frame = draw_lines(lines, img = frame)
             frame = draw_results(img= frame)
             plt.imshow(frame)
+            plt.show
                       
             vid_writer.write(frame)
             ch = cv2.waitKey(1)
