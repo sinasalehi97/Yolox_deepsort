@@ -115,6 +115,8 @@ def time_synchronized():
     torch.cuda.synchronize() if torch.cuda.is_available() else None
     return time.time()
 
+centeroid={}
+
 
 # Draw the boxes having tracking indentities 
 def draw_boxes(img, bbox, object_id, identities=None, offset=(0, 0)):
@@ -134,14 +136,17 @@ def draw_boxes(img, bbox, object_id, identities=None, offset=(0, 0)):
         color = compute_color_for_labels(object_id[i])
         obj_name = class_names[object_id[i]]
         label = '%s' % (obj_name)
+        centeroid.append(center)
         
         data_deque[id].appendleft(center) #appending left to speed up the check we will check the latest map
         UI_box(box, img, label=label + str(id), color=color, line_thickness=3, boundingbox=True)
 
         if len(data_deque[id]) >=2:
             update_counter(centerpoints = data_deque[id], obj_name = obj_name)
+            
 
     return img
+
 
 # Tracking class to integrate Deepsort tracking with our detector
 class Tracker():
@@ -220,3 +225,4 @@ if __name__=='__main__':
     cap.release()
     vid_writer.release()
     cv2.destroyAllWindows()
+    print(centeroid)
