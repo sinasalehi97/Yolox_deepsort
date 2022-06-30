@@ -30,23 +30,17 @@ class_names = COCO_CLASSES
 
 
 lines  = [
-    {'Title' : 'Line1', 'Cords' : [(1200, 300), (100, 300)]},
-    {'Title' : 'Line2', 'Cords' : [(1200, 400), (100, 400)]},
-    {'Title' : 'Line3', 'Cords' : [(1200, 500), (100, 500)]},
-    {'Title' : 'Line4', 'Cords' : [(1200, 600), (100, 600)]},
-    {'Title' : 'Line5', 'Cords' : [(1200, 700), (100, 700)]},
-    {'Title' : 'Line6', 'Cords' : [(100, 700), (100, 300)]},
-    {'Title' : 'Line7', 'Cords' : [(200, 700), (200, 300)]},
-    {'Title' : 'Line8', 'Cords' : [(300, 700), (300, 300)]},
-    {'Title' : 'Line9', 'Cords' : [(400, 700), (400, 300)]},
-    {'Title' : 'Line10', 'Cords' : [(500, 700), (500, 300)]},
-    {'Title' : 'Line11', 'Cords' : [(600, 700), (600, 300)]},
-    {'Title' : 'Line12', 'Cords' : [(700, 700), (700, 300)]},
-    {'Title' : 'Line13', 'Cords' : [(800, 700), (800, 300)]},
-    {'Title' : 'Line14', 'Cords' : [(900, 700), (900, 300)]},
-    {'Title' : 'Line15', 'Cords' : [(1000, 700), (1000, 300)]},
-    {'Title' : 'Line16', 'Cords' : [(1100, 700), (1100, 300)]},
-    {'Title' : 'Line17', 'Cords' : [(1200, 700), (1200, 300)]}
+    {'Title' : 'Line1', 'Cords' : [(1200, 300), (150, 300)]},
+    {'Title' : 'Line2', 'Cords' : [(1200, 450), (150, 450)]},
+    {'Title' : 'Line3', 'Cords' : [(1200, 600), (150, 600)]},
+    {'Title' : 'Line4', 'Cords' : [(150, 600), (150, 300)]},
+    {'Title' : 'Line5', 'Cords' : [(300, 600), (300, 300)]},
+    {'Title' : 'Line6', 'Cords' : [(450, 600), (450, 300)]},
+    {'Title' : 'Line7', 'Cords' : [(600, 600), (600, 300)]},
+    {'Title' : 'Line8', 'Cords' : [(750, 600), (750, 300)]},
+    {'Title' : 'Line9', 'Cords' : [(900, 600), (900, 300)]},
+    {'Title' : 'Line10', 'Cords' : [(1050, 600), (1050, 300)]},
+    {'Title' : 'Line11', 'Cords' : [(1200, 600), (1200, 300)]}
 ]
 
 object_counter = {
@@ -60,13 +54,7 @@ object_counter = {
     'Line8' : Counter(),
     'Line9' : Counter(),
     'Line10' : Counter(),
-    'Line11' : Counter(),
-    'Line12' : Counter(),
-    'Line13' : Counter(),
-    'Line14' : Counter(),
-    'Line15' : Counter(),
-    'Line16' : Counter(),
-    'Line17' : Counter()
+    'Line11' : Counter()
 }
 
 
@@ -201,10 +189,7 @@ if __name__=='__main__':
         if ret_val:
             frame, bbox = tracker.update(frame, visual=True, logger_=False)  # feed one frame and get result
             frame = draw_lines(lines, img = frame)
-            frame = draw_results(img= frame)
-            plt.imshow(frame)
-            plt.show
-                      
+            frame = draw_results(img= frame)                      
             vid_writer.write(frame)
             ch = cv2.waitKey(1)
             if ch == 27 or ch == ord("q") or ch == ord("Q"):
