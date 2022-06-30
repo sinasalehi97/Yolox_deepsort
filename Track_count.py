@@ -202,7 +202,7 @@ if __name__=='__main__':
             frame, bbox = tracker.update(frame, visual=True, logger_=False)  # feed one frame and get result
             frame = draw_lines(lines, img = frame)
             frame = draw_results(img= frame)
-            plt.imshow(img=frame)
+            plt.imshow(frame)
                       
             vid_writer.write(frame)
             ch = cv2.waitKey(1)
