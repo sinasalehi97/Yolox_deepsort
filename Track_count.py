@@ -73,7 +73,13 @@ object_counter = {
     'Line8' : Counter(),
     'Line9' : Counter(),
     'Line10' : Counter(),
-    'Line11' : Counter()
+    'Line11' : Counter(),
+    'Line12' : Counter(),
+    'Line13' : Counter(),
+    'Line14' : Counter(),
+    'Line15' : Counter(),
+    'Line16' : Counter(),
+    'Line17' : Counter()
 }
 
 
