@@ -234,7 +234,7 @@ if __name__=='__main__':
     cv2.destroyAllWindows()
 
     
-    for key, value in data_deque.items():
-        print(key, ' : ', value)
+   # for key, value in data_deque.items():
+    #    print(key, ' : ', value)
 
     
