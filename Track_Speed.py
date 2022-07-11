@@ -203,7 +203,9 @@ if __name__=='__main__':
         #f'speed_demo_{sys.argv[1]}', cv2.VideoWriter_fourcc(*"mp4v"), fps, (int(width), int(height))
     #) # open one video
     vid_writer = cv2.VideoWriter('speed.mp4', cv2.VideoWriter_fourcc(*'DIVX'), fps, (int(width), int(height))
+                                 
     frame_count = 0
+                                 
     fps = 0.0
     while True:
         ret_val, frame = cap.read() # read frame from video
