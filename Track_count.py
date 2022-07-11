@@ -219,7 +219,8 @@ if __name__=='__main__':
         if ret_val:
             frame, bbox = tracker.update(frame, visual=True, logger_=False)  # feed one frame and get result
             frame = draw_lines(lines, img = frame)
-            frame = draw_results(img= frame)                      
+            frame = draw_results(img= frame)
+            cv2.imshow('frame', frame)
             vid_writer.write(frame)
             ch = cv2.waitKey(1)
             if ch == 27 or ch == ord("q") or ch == ord("Q"):
