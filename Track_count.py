@@ -223,7 +223,7 @@ if __name__=='__main__':
             cv2.imshow('frame', frame)
             vid_writer.write(frame)
             ch = cv2.waitKey(1)
-            if ch == 99999 or ch == ord("q") or ch == ord("Q"):
+            if ch == 27 or ch == ord("q") or ch == ord("Q"):
                 break
             fps  = ( fps + (1./(time_synchronized()-t1)) ) / 2
         else:
