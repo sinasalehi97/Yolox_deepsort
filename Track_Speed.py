@@ -199,10 +199,10 @@ if __name__=='__main__':
     property_id = int(cv2.CAP_PROP_FRAME_COUNT) 
     length = int(cv2.VideoCapture.get(cap, property_id))
 
-    #vid_writer = cv2.VideoWriter(
-        #f'speed_demo_{sys.argv[1]}', cv2.VideoWriter_fourcc(*"mp4v"), fps, (int(width), int(height))
-    #) # open one video
-    vid_writer = cv2.VideoWriter('speed.mp4', cv2.VideoWriter_fourcc(*'DIVX'), fps, (int(width), int(height))
+    vid_writer = cv2.VideoWriter(
+        f'speed_demo_{sys.argv[1]}', cv2.VideoWriter_fourcc(*"mp4v"), fps, (int(width), int(height))
+    ) # open one video
+    #vid_writer = cv2.VideoWriter('speed.mp4', cv2.VideoWriter_fourcc(*'DIVX'), fps, (int(width), int(height))
                                  
     frame_count = 0
                                  
