@@ -32,13 +32,18 @@ class_names = COCO_CLASSES
 
 
 lines  = [
-    {'Title' : 'Line1', 'Cords' : [(580, 500), (100, 500)]},
-    {'Title' : 'Line2', 'Cords' : [(680, 500), (1070, 500)]}
+    {'Title' : 'Line1', 'Cords' : [(1200, 300), (100, 300)]},
+
+    {'Title' : 'Line2', 'Cords' : [(1200, 600), (100, 600)]},
+
+    {'Title' : 'Line3', 'Cords' : [(100, 700), (100, 300)]}
+
 ]
 
 object_counter = {
     'Line1' : Counter(),
-    'Line2' : Counter()
+    'Line2' : Counter(),
+    'Line3' : Counter()
 }
 
 def estimateSpeed(location1, location2):
@@ -115,7 +120,7 @@ def draw_boxes(img, bbox, object_id, identities=None, offset=(0, 0)):
     for i, box in enumerate(bbox):
         x1, y1, x2, y2 = [int(i) +offset[0]  for i in box]  
         box_height = (y2-y1)
-        center = (int((x2+x1)/ 2), int((y2+y2)/2))
+        center = (int((x2+x1)/ 2), int((y1+y2)/2))
         id = int(identities[i]) if identities is not None else 0
 
         if id not in set(data_deque):  
